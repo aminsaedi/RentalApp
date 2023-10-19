@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
@@ -14,11 +15,22 @@ namespace RentalApp.Models
             Appointments = new HashSet<Appointments>();
         }
 
+        public enum StatusEnum
+        {
+            Available,
+            Occupied,
+            Maintenance
+        }
+
+        public SelectList StatusList = new SelectList(Enum.GetValues(typeof(StatusEnum)));
+
+
         public int ApartmentId { get; set; }
         public int? BuildingId { get; set; }
         public string Name { get; set; }
         public int? Floor { get; set; }
         public int? Bedrooms { get; set; }
+        public string Status { get; set; }
 
         public virtual Buildings Building { get; set; }
         public virtual ICollection<Appointments> Appointments { get; set; }

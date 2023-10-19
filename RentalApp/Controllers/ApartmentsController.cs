@@ -18,6 +18,15 @@ namespace RentalApp.Controllers
             _context = context;
         }
 
+        public enum StatusEnum
+        {
+            Available,
+            Occupied,
+            Maintenance
+        }
+
+        public SelectList StatusList = new SelectList(Enum.GetValues(typeof(StatusEnum)));
+
         // GET: Apartments
         public async Task<IActionResult> Index()
         {
@@ -56,7 +65,7 @@ namespace RentalApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ApartmentId,BuildingId,Name,Floor,Bedrooms")] Apartments apartments)
+        public async Task<IActionResult> Create([Bind("ApartmentId,BuildingId,Name,Floor,Bedrooms,Status")] Apartments apartments)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +99,7 @@ namespace RentalApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ApartmentId,BuildingId,Name,Floor,Bedrooms")] Apartments apartments)
+        public async Task<IActionResult> Edit(int id, [Bind("ApartmentId,BuildingId,Name,Floor,Bedrooms,Status")] Apartments apartments)
         {
             if (id != apartments.ApartmentId)
             {

@@ -32,7 +32,7 @@ namespace RentalApp.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseSqlServer();
+                optionsBuilder.UseSqlServer("Server=24.48.6.239;User ID=sa;password=AminAnita@2023;Initial Catalog=RentalApp;");
             }
         }
 
@@ -41,7 +41,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Apartments>(entity =>
             {
                 entity.HasKey(e => e.ApartmentId)
-                    .HasName("PK__Apartmen__CBDF57447BF67026");
+                    .HasName("PK__Apartmen__CBDF57446586BF9E");
 
                 entity.Property(e => e.ApartmentId).HasColumnName("ApartmentID");
 
@@ -50,6 +50,10 @@ namespace RentalApp.Models
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(255);
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Building)
                     .WithMany(p => p.Apartments)
@@ -61,7 +65,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Appointments>(entity =>
             {
                 entity.HasKey(e => e.AppointmentId)
-                    .HasName("PK__Appointm__8ECDFCA287B07D15");
+                    .HasName("PK__Appointm__8ECDFCA279169528");
 
                 entity.Property(e => e.AppointmentId).HasColumnName("AppointmentID");
 
@@ -92,7 +96,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Buildings>(entity =>
             {
                 entity.HasKey(e => e.BuildingId)
-                    .HasName("PK__Building__5463CDE4750ABCCB");
+                    .HasName("PK__Building__5463CDE4585E7ECE");
 
                 entity.Property(e => e.BuildingId).HasColumnName("BuildingID");
 
@@ -114,7 +118,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Events>(entity =>
             {
                 entity.HasKey(e => e.EventId)
-                    .HasName("PK__Events__7944C87020393B5B");
+                    .HasName("PK__Events__7944C870EE27F720");
 
                 entity.Property(e => e.EventId).HasColumnName("EventID");
 
@@ -134,7 +138,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Messages>(entity =>
             {
                 entity.HasKey(e => e.MessageId)
-                    .HasName("PK__Messages__C87C037C4C738C9B");
+                    .HasName("PK__Messages__C87C037C6A8AC4BF");
 
                 entity.Property(e => e.MessageId).HasColumnName("MessageID");
 
@@ -160,7 +164,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Properties>(entity =>
             {
                 entity.HasKey(e => e.PropertyId)
-                    .HasName("PK__Property__70C9A7557CA39B26");
+                    .HasName("PK__Properti__70C9A75575C43D8C");
 
                 entity.Property(e => e.PropertyId).HasColumnName("PropertyID");
 
@@ -182,7 +186,7 @@ namespace RentalApp.Models
             modelBuilder.Entity<Users>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__Users__1788CCAC5129E780");
+                    .HasName("PK__Users__1788CCAC600BA506");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
