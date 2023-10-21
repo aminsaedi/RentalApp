@@ -4,12 +4,29 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-image: url('/css/background.jpg'); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="appointment-page">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+    <h1>Index</h1>
+
+    <p class="create">
+        
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
     <thead>
         <tr>
             <th>
@@ -51,3 +68,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

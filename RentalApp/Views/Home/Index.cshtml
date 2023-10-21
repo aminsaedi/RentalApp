@@ -2,7 +2,96 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - RentalApp</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+        body {
+            background-image: url('/css/Home.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /*.text-center {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 200px;
+            text-align: center;
+        }*/
+
+        .login-container {
+            background-color: var(--secondary-bg-color);
+            border: 4px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+
+        .form-group label {
+            color: var(--button-text-color);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            background-color: #AEBDCA;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        .login-button {
+            background-color: #7895B2;
+            color: #E8DFCA;
+            border: none;
+            padding: 15px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome to Rental Apartment</h1>
+
+    </div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input type="text" class="form-control" id="Username" name="Username" placeholder="Enter your username" />
+            </div>
+            <div class="form-group">
+                <label for="Password" >Password:</label>
+                <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter your password" />
+            </div>
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+    </div>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+    <footer class="footer">
+            <br />
+
+        <div class="text-center">
+            &copy; 2023 RentalApp. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

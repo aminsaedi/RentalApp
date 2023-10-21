@@ -9,6 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using RentalApp.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace RentalApp
 {
@@ -25,10 +28,17 @@ namespace RentalApp
         public void ConfigureServices(IServiceCollection services)
         {
             var connection =
-Configuration.GetConnectionString("Default");
+            Configuration.GetConnectionString("Default");
             services.AddDbContext<Models.RentalAppContext>(options =>
             options.UseSqlServer(connection));
             services.AddControllersWithViews();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+           options.LoginPath = "/Account/Login";
+
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +60,8 @@ Configuration.GetConnectionString("Default");
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

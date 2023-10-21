@@ -3,7 +3,20 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+                background-image: url('/css/user.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+</head>
+<body class="users-page">
 <h1>Index</h1>
 
 <p>
@@ -51,3 +64,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

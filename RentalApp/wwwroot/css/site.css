@@ -13,17 +13,34 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #336699;
+    background-color: #F5EFE6;
+    border-color: #1861ac;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
+    .btn-primary:hover {
+        background-color: #E8DFCA; 
+        color: #AEBDCA; 
+    }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
+#submit {
+    background-color: lightsteelblue;
+    border-color: #1861ac;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #336699;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -50,22 +67,153 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
+h1 {
+    font-size: 28px; 
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+    color: #336699; 
+    text-align: left; 
+    padding: 20px 0;
+}
+/*----------------------header------------------------------*/
+.navbar {
+    background-color: #F5EFE6; 
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.navbar-brand {
+    font-weight: normal;
+    color: #336699;
+    text-transform: none;
+    font-size: 24px; 
+    padding: 10px 20px;
 }
+
+.navbar-toggler-icon {
+    background-color: #336699; 
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+        color: #6688AA;
+    }
+
+/*-------------------footer*/
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    background-color: #F5EFE6;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px; 
+    text-align: center;
+    line-height: 20px;
 }
+
+.mainbody {
+    background-color: #F5EFE6; 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+}
+
+li {
+    padding: 0;
+}
+
+    li a {
+        display: block;
+        color: #E8DFCA;
+        padding: 8px 20px;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    li a:hover {
+        background-color: #7895B2;
+        color: white;
+        text-decoration: none;
+    }
+
+/*----------------------table------------------------------*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #F5EFE6;
+    border: 1px solid #ccc;
+}
+
+    table th, table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #336699; 
+        color: white;
+        font-weight: bold;
+        border-top: 2px solid #336699;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #E8DFCA; 
+    }
+
+    table tr:hover {
+        background-color: #6688AA; 
+    }
+/*----------------------Message page------------------------------*/
+
+    body.message-page {
+    background-color: #ccc;
+}
+
+
+.create {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #E8DFCA;
+    border: none;
+    color: #7895B2;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.create span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+.create span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+.create:hover span {
+        padding-right: 25px;
+    }
+
+.create:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+

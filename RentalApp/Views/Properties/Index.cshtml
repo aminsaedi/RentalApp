@@ -3,10 +3,24 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+                background-image: url('/css/Properties.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+</head>
+<body class="properties-page">
 <h1>Index</h1>
 
-<p>
+    <p class="create">
+        
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -45,3 +59,5 @@
 }
     </tbody>
 </table>
+</body>
+</html>

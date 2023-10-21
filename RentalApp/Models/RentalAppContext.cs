@@ -31,7 +31,6 @@ namespace RentalApp.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=24.48.6.239;User ID=sa;password=AminAnita@2023;Initial Catalog=RentalApp;");
             }
         }
